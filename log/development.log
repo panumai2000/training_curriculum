@@ -1,0 +1,220 @@
+  [1m[35m (6.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE DATABASE `training_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `training_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT @@innodb_file_per_table = 1 AND @@innodb_file_format = 'Barracuda'[0m
+  [1m[35m (64.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) COLLATE utf8_general_ci NOT NULL PRIMARY KEY)[0m
+  [1m[35m (32.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) COLLATE utf8_general_ci NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT GET_LOCK('3470622141901363785', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePlans (20200414072724)
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `plan` varchar(255), `date` date, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (2.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200414072724')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-04-16 10:26:16.970072', '2021-04-16 10:26:16.970072')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('3470622141901363785')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2021-04-16 19:26:47 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (6.2ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-16' AND '2021-04-22'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in getWeek'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 34.1ms | Allocations: 5966)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/stark/projects/training_curriculum/public/packs
+[Webpacker] Hash: ef270c56fa66020c9089
+Version: webpack 4.46.0
+Time: 1701ms
+Built at: 2021/04/16 19:26:51
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 4309ms (Views: 4261.0ms | ActiveRecord: 16.7ms | Allocations: 66590)
+
+
+Started POST "/calendars" for ::1 at 2021-04-16 19:41:42 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CalendarsController#create as JS
+  Parameters: {"authenticity_token"=>"iYv+FJ1yj/RoTsdHx76Y1Z2En+qrdupsUOq426dsRinaJ3H82Wfxnusm6FfPWZ3IRYg9F4gvgOX0HHRFGGOeQw==", "plan"=>{"date"=>"2021-04-17", "plan"=>"あ"}, "commit"=>"保存"}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 1298)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: calendars):
+  
+app/controllers/calendars_controller.rb:18:in `plan_params'
+app/controllers/calendars_controller.rb:11:in `create'
+Started POST "/calendars" for ::1 at 2021-04-16 19:41:44 +0900
+Processing by CalendarsController#create as JS
+  Parameters: {"authenticity_token"=>"iYv+FJ1yj/RoTsdHx76Y1Z2En+qrdupsUOq426dsRinaJ3H82Wfxnusm6FfPWZ3IRYg9F4gvgOX0HHRFGGOeQw==", "plan"=>{"date"=>"2021-04-17", "plan"=>"あ"}, "commit"=>"保存"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 883)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: calendars):
+  
+app/controllers/calendars_controller.rb:18:in `plan_params'
+app/controllers/calendars_controller.rb:11:in `create'
+Started GET "/" for ::1 at 2021-04-17 11:13:08 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (5.1ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1397)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 29.3ms | ActiveRecord: 14.3ms | Allocations: 15217)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:14:22 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 4389)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.3ms | Allocations: 10168)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:28:43 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.7ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1028)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 0.7ms | Allocations: 6902)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:28:44 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.7ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 639)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.7ms | Allocations: 5584)
+
+
+Started POST "/calendars" for ::1 at 2021-04-17 11:31:31 +0900
+Processing by CalendarsController#create as JS
+  Parameters: {"authenticity_token"=>"OMxmmHvGNnPKbITnQBCpCf2QPBHDoWHeWinUdYQcCctrYOlwP9NIGUkEq/dI96wUJZye7OD4C1f+3xjrOxPRoQ==", "plan"=>{"date"=>"", "plan"=>""}, "commit"=>"保存"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 902)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: calendars):
+  
+app/controllers/calendars_controller.rb:18:in `plan_params'
+app/controllers/calendars_controller.rb:11:in `create'
+Started GET "/" for ::1 at 2021-04-17 11:36:12 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (2.2ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 54.7ms | ActiveRecord: 2.2ms | Allocations: 8723)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:36:17 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 5573)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:36:18 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 5568)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:38:18 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1013)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.3ms | Allocations: 6867)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:38:19 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 5574)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:38:52 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.6ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1008)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.6ms | Allocations: 6872)
+
+
+Started GET "/" for ::1 at 2021-04-17 11:38:53 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2021-04-17' AND '2021-04-23'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `block in get_Week'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 5571)
+
+
+Started POST "/calendars" for ::1 at 2021-04-17 11:39:20 +0900
+Processing by CalendarsController#create as JS
+  Parameters: {"authenticity_token"=>"Dn5nnbwvt00FB5Fefk4RTxbPaJx5nYFvk/WB9JOUQ11d0uh1+DrJJ4Zvvk52qRRSzsPKYVrE6+Y3A01qLJubNw==", "plan"=>{"date"=>"", "plan"=>"あ"}, "commit"=>"保存"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 889)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: calendars):
+  
+app/controllers/calendars_controller.rb:18:in `plan_params'
+app/controllers/calendars_controller.rb:11:in `create'
+Started POST "/calendars" for ::1 at 2021-04-17 11:39:26 +0900
+Processing by CalendarsController#create as JS
+  Parameters: {"authenticity_token"=>"Dn5nnbwvt00FB5Fefk4RTxbPaJx5nYFvk/WB9JOUQ11d0uh1+DrJJ4Zvvk52qRRSzsPKYVrE6+Y3A01qLJubNw==", "plan"=>{"date"=>"2021-04-17", "plan"=>"あ"}, "commit"=>"保存"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 889)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: calendars):
+  
+app/controllers/calendars_controller.rb:18:in `plan_params'
+app/controllers/calendars_controller.rb:11:in `create'
